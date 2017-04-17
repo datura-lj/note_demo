@@ -14,7 +14,8 @@
     <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
     <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
     <title>Title</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/animate.css" />
 </head>
 <body>
     <div class="page-top">
@@ -66,9 +67,17 @@
             </ul>
         </div>
     </div>
+    <div class="shade_box"  v-show="onceShow2">
+        <div class="shade_bg"></div>
+        <transition enter-active-class="animated zoomInLeft" leave-active-class="animated zoomOutRight">
+            <div class="shade_content" v-show="onceShow">
+                <img src="./image/welcome.gif" alt="欢迎动画" >
+            </div>
+        </transition>
+    </div>
 </body>
-<script src="./vue.js"></script>
-<script src="./app.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/app.js"></script>
 </html>
 
 

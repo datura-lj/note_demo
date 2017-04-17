@@ -125,6 +125,27 @@ document.addEventListener('DOMContentLoaded',function () {
             }
         }
     });
+    var shade = new Vue({
+       el: '.shade_box',
+       data: {
+           onceShow:true,
+           onceShow2: true,
+       },
+        methods: {
+            change(){
+                this.onceShow = false;
+            }
+        },
+        mounted: function () {
+           var _this = this;
+           setTimeout(function () {
+               _this.change();//调用方法
+           },1000);
+            setTimeout(function () {
+                 _this.onceShow2 = false;//直接该数据
+            },2000);
+        }
+    });
     function watchHashChange() {
         //var hash = window.location.hash;
         var hash = window.location.hash.slice(1);
